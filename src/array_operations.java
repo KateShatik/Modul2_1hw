@@ -64,11 +64,9 @@ public class array_operations {
         return d;
     }
 
-    public static int[] modulus (int array[]){
-        int [] res = new int[2];
-        res[0]=Math.abs(array[0]);
-        res[1]=Math.abs(array[array.length-1]);
-return res;
+    public static int modulus (int array[]){
+
+return array[0]%array[array.length-1];
     }
 
     public static int  secondLargest(int array[]){
@@ -83,8 +81,8 @@ return res;
     }
 
     public static void main (String[] arg){
-        int[] a = {-3,4,6,1,-14,3,8,9,2,1};
-        int[] copy_a = {-3,4,6,1,-14,9,8,9,2,1};
+        int[] a = {-3,4,6,1,-14,3,8,9,2,2};
+        int[] copy_a = {-3,4,6,1,-14,9,8,9,2,2};
         System.out.println("Array: ");
         for(int i=0; i<a.length; i++){
             System.out.print(a[i]+" ") ;
@@ -98,11 +96,10 @@ return res;
         System.out.println("Max "+max);
         int mult= mult(a);
         System.out.println("Multiplication "+mult);
-        int[] mod= modulus(copy_a);
+        int mod= modulus(copy_a);
         System.out.println("Modulus of first and last element ");
-        for(int i=0; i<mod.length;i++){
-            System.out.println(mod[i]);
-        }
+        System.out.println(mod);
+
         int d= secondLargest(a);
         System.out.println("Second largest element: "+d);
         int m=maxPositive(a);
